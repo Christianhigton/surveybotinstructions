@@ -3,55 +3,103 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>GitHub Reference Page</title>
+    <title>SurveyJSBot System Instructions</title>
     <style>
       :root {
         color-scheme: light;
         font-family: Arial, Helvetica, sans-serif;
-        background: #f6f8fa;
+        background: #f4f7fb;
         color: #24292f;
       }
 
       body {
         margin: 0;
         min-height: 100vh;
-        display: grid;
-        place-items: center;
-        padding: 32px;
+        padding: 32px 18px;
       }
 
       main {
-        width: min(720px, 100%);
+        width: min(980px, 100%);
+        margin: 0 auto;
         background: #ffffff;
         border: 1px solid #d0d7de;
         border-radius: 8px;
-        padding: 40px;
+        padding: 36px;
         box-shadow: 0 12px 36px rgba(27, 31, 36, 0.08);
       }
 
       h1 {
         margin: 0 0 16px;
-        font-size: 32px;
+        font-size: 34px;
         line-height: 1.15;
       }
 
       p {
-        margin: 0;
-        font-size: 18px;
+        margin: 0 0 24px;
+        color: #57606a;
+        font-size: 17px;
         line-height: 1.6;
       }
 
-      code {
+      pre {
+        margin: 0;
+        padding: 24px;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        word-break: break-word;
+        border: 1px solid #d8dee4;
+        border-radius: 8px;
+        background: #f6f8fa;
+        color: #1f2328;
+        font: 14px/1.55 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      }
+
+      a {
+        color: #0969da;
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin: 0 0 22px;
+      }
+
+      .meta a {
+        display: inline-block;
         padding: 2px 6px;
         border-radius: 6px;
-        background: #eef2f6;
+        background: #ddf4ff;
+        text-decoration: none;
+        font-size: 14px;
       }
     </style>
   </head>
   <body>
     <main>
-      <h1>GitHub Reference Page</h1>
-      <p>This public GitHub Pages site was created from the local <code>githubproompt</code> folder.</p>
+      <h1>SurveyJSBot System Instructions</h1>
+      <p>A public reference page for SurveyJS and JATOS Helper assistant instructions.</p>
+      <div class="meta">
+        <a href="github">View raw instructions</a>
+        <a href="https://github.com/Christianhigton/surveybotinstructions">View repository</a>
+      </div>
+      <pre id="instructions">Loading instructions...</pre>
     </main>
+    <script>
+      fetch("github")
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error("Could not load instructions.");
+          }
+          return response.text();
+        })
+        .then(function (text) {
+          document.getElementById("instructions").textContent = text;
+        })
+        .catch(function () {
+          document.getElementById("instructions").textContent =
+            "The instructions file could not be loaded. Open the raw instructions link above.";
+        });
+    </script>
   </body>
 </html>

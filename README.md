@@ -1,10 +1,7 @@
-# GitHub Reference Page
+# SurveyJSBot System Instructions
 
-This repository is set up as a simple GitHub Pages site.
+This repository is set up as a public GitHub Pages reference for SurveyJSBot system instructions.
 
-After pushing to a public GitHub repository, enable Pages from the repository settings using:
+Live page:
 
-- Source: `Deploy from a branch`
-- Branch: `main`
-- Folder: `/ (root)`
-
+- https://christianhigton.github.io/surveybotinstructions/
